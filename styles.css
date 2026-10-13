@@ -1,0 +1,96 @@
+:root {
+  --verde: #2f6b3a;
+  --verde-claro: #e8f3e6;
+  --fondo: #f6f9f3;
+  --texto: #22332a;
+}
+ 
+/* 2. Reglas generales para toda la página */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }          /* los enlaces #riesgos bajan suave */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+ 
+/* 3. Cabecera y menú */
+header {
+  display: flex;                           /* logo a la izquierda, menú a la derecha */
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--verde);
+  color: #fff;
+}
+.logo { font-size: 1.3rem; font-weight: bold; }
+nav a { color: #fff; text-decoration: none; margin-left: 16px; }
+nav a:hover { text-decoration: underline; }
+ 
+/* 4. Portada */
+.hero { text-align: center; padding: 60px 20px; background: var(--verde-claro); }
+.etiqueta { color: var(--verde); font-weight: bold; letter-spacing: 2px; font-size: .8rem; }
+.hero h1 { font-size: 2.2rem; margin: 8px 0; }
+.hero h1 span { color: var(--verde); }     /* "Protege tu cosecha" en verde */
+ 
+/* 5. Botón (se usa en la portada y en el formulario) */
+.boton {
+  display: inline-block;
+  background: var(--verde);
+  color: #fff;
+  border: 0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.boton:hover { opacity: .9; }
+ 
+/* 6. Secciones y tarjetas */
+.seccion { max-width: 960px; margin: auto; padding: 40px 20px; }
+.descripcion { color: #5b6b61; }
+.tarjetas {
+  display: grid;                           /* columnas automáticas: se adaptan al celular */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.tarjeta {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px #0002;
+}
+.icono { font-size: 2rem; }
+ 
+/* 7. Formulario y resultado (dos paneles lado a lado) */
+.paneles { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.formulario, .resultado {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px #0002;
+}
+.formulario label { display: block; margin-top: 12px; font-weight: 600; }
+.formulario input, .formulario select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #c8d3cb;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.formulario .boton { width: 100%; margin-top: 18px; }
+ 
+/* 8. Niveles de riesgo: el JS les pone estas clases para dar color */
+.riesgo { border-left: 6px solid #999; background: #fafafa; padding: 8px 12px; margin: 10px 0; }
+.riesgo.bajo  { border-color: #2f8f4a; }
+.riesgo.medio { border-color: #e6a100; }
+.riesgo.alto  { border-color: #c0392b; }
+ 
+/* 9. Aviso y pie de página */
+.aviso { font-size: .85rem; color: #6b7a70; margin-top: 16px; }
+footer { text-align: center; padding: 24px; background: var(--verde); color: #fff; }
+ 
